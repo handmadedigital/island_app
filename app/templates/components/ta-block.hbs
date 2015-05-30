@@ -1,0 +1,16 @@
+<div class="ta-block-wrapper {{block-wrapper}}">
+    <div class="ta-block-title">
+        <h5>{{upper-case block-wrapper}}</h5>
+    </div>
+    <div class="ta-block-body">
+        <div class="row">
+            {{#each category in model}}
+                <div class="col-md-3 col-sm-6">
+                    <div class="ta-ind-block-wrapper center">
+                        <img src="http://localhost:8080/static/img/{{category.image_src}}">
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
