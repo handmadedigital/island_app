@@ -1,0 +1,39 @@
+<div id="productsPageWrapper">
+	<div class="row">
+		<div class="col-sm-12">
+			<div id="productsBar">
+				<h6>Island Buyers Club</h6>
+			</div>
+			<div id="productsDisplay">
+				{{#each model as |product|}}
+					<a href="/product/{{product.slug}}">
+						<div class="col-md-3">
+							<div class="product-display-wrapper">
+								<div class="product-display-image">
+									<img src="{{product.image_src}}">
+								</div>
+									<div class="product-display-info">
+	                                	<div class="row">
+	                                    	<div class="col-sm-8">
+	                                        	<h6>{{product.name}}</h6>
+	                                        </div>
+	                                        <div class="col-sm-4">
+	                                        	<h6></h6>
+	                                        </div>
+	                                    </div>
+	                                    <div class="row">
+	                                    	<div class="col-sm-8">
+	                                        	<h6 class="product-display-categories">ladder</h6>
+	                                        </div>
+	                                    </div>
+	                            </div>					
+							</div>
+						</div>
+					</a>
+				{{/each}}
+
+				{{infinity-loader infinityModel=model}}
+			</div>
+		</div>
+	</div>
+</div>

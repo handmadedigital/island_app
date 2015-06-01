@@ -2,10 +2,5 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
 	namespace: 'api/v1',
-	host: 'http://localhost:8080',
-	ajax: function(url, method, hash) {
-	    hash.crossDomain = true;
-	    hash.xhrFields = {withCredentials: false};
-	    return this._super(url, method, hash);
-  	}
+	host: 'http://localhost:8000'
 });
