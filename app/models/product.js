@@ -4,5 +4,6 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   slug: DS.attr('string'),
   description: DS.attr('string'),
-  image_src: DS.attr('string')
+  image_src: DS.attr('string'),
+  categories: DS.hasMany('category')
 });

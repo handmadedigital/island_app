@@ -1,8 +1,7 @@
 import Ember from 'ember';
-import InfinityRoute from "ember-infinity/mixins/route"
 
-export default Ember.Route.extend(InfinityRoute, {
+export default Ember.Route.extend({
 	model:function(){
-		return this.infinityModel("product", { perPage: 12, startingPage: 1 });
+		return this.store.find("product", {includes: "categories"});
 	}
 });

@@ -4,12 +4,14 @@
     </div>
     <div class="ta-block-body">
         <div class="row">
-            {{#each category in model}}
-                <div class="col-md-3 col-sm-6">
-                    <div class="ta-ind-block-wrapper center">
-                        <img src="{{category.image_src}}">
+            {{#each m in model}}
+                {{#link-to 'user.product' m.slug}}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="ta-ind-block-wrapper center">
+                            <img src="{{m.image_src}}">
+                        </div>
                     </div>
-                </div>
+                {{/link-to}}
             {{/each}}
         </div>
     </div>
