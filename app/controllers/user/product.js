@@ -5,8 +5,8 @@ export default Ember.Controller.extend({
 
 	clearProperties: function(){
 		this.setProperties({
-			quantity: "",
 			variant_id: "",
+			quantity: 1
 		});
 	},
 
@@ -46,8 +46,6 @@ export default Ember.Controller.extend({
 				});	
 
 				self.clearProperties();
-
-				location.reload();
 			}
 		}
     }

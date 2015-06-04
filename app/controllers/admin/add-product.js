@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	displayAddProduct: false,
 	displayAddVariation: true,
-	options: {},
 
 	actions:{
 		displayAddProduct:function(){
@@ -27,16 +26,10 @@ export default Ember.Controller.extend({
 			}
 		},
 		addOptionValue: function(){
-			this.options = {
-				"size":{
-					"13_ft":{
-						"width": 15,
-						"length": 20
-					}
-				}
-			}
+			var data = this.getProperties('option', 'option_value', 'option_width', 'option_height');
 
-			console.log(this.options.size);
+			this.store.push('product')
+			
 		}
 	}
 });
