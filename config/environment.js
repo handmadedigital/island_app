@@ -20,7 +20,8 @@ module.exports = function(environment) {
 
  ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:token',
-    crossOriginWhitelist: ['https://island-api.herokuapp.com/']
+    crossOriginWhitelist: ['https://island-api.herokuapp.com/'],
+    routeAfterAuthentication: 'user.dashboard'
   };
 
   ENV['simple-auth-token'] = {
