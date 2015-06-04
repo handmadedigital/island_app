@@ -12,6 +12,9 @@ Router.map(function() {
       this.route('dashboard');
       this.route('products', {path: '/products'});
       this.route('product', {path: '/product/:product_slug'});
+      this.route('cart');
+      this.route('orders');
+      this.route('order', {path: '/order/:order_number'})
   });
 });
 

@@ -3,7 +3,12 @@ import Ember from 'ember';
 
 export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	attrs: {
-   	 categories: {embedded: 'always'}
+   	 categories: {embedded: 'always'},
+   	 variants: {embedded: 'always'},
+   	 values: {embedded: 'always'},
+   	 options: {embedded: 'always'},
+   	 product: {embedded: 'always'},
+   	 order_details: {embedded: 'always'}
     },
 
   	extractArray: function(store, typeClass, payload) {
@@ -19,7 +24,6 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 		self = this;
 
 		typeClass.eachRelationship(function(key, relationship){
-			if(relationship.kind === "hasMany"){
 				if( ! hash[key]){
 					return hash;
 				}
@@ -29,7 +33,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 				hash[key] = hashed;
 
 				return hashed;
-			}
+			
 		});
 
 		return this._super(typeClass, hash, prop);

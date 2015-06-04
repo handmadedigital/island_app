@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-h1,h2,h3,h4,h5,h6,p,span,label,a,li{
+h1,h2,h3,h4,h5,h6,p,span,label,a,li,dd,th,td{
 	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 }
@@ -15,6 +15,8 @@ body{
 .right{float: right}
 .left{float: left;}
 .no-padding{padding: 0;}
+.no-margin{margin: 0;}
+.price-display{text-align: right;}
 
 
 /*************************/
@@ -36,9 +38,12 @@ nav.navbar {
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
 	color: #fff;
 }
-#wrapper{
+.table.table-ta th{
+	color: #fff;
 }
-
+.table-ta-hover > tbody > tr:hover {
+  background-color: rgba(112, 100, 93, 1);
+}
 
 /************************************************************/
 /* COMPONENTS */
@@ -126,29 +131,187 @@ nav.navbar {
 }
 
 
+/**********************************/
+/* USER DASHBOARD */
+/**********************************/
+.ta-block-wrapper.recent-news .ta-block-body{
+	background: rgba(112, 100, 93, 0.6);
+	padding: 10px 0; 
+}
+.dash-single-news{
+	padding: 0 10px;
+}
+.dash-single-news p{
+	font-weight: 300;
+	padding: 0 20px;
+}
+
+
+
 /********************************/
 /* USER PRODUCTS */
 /********************************/
-#productsBar {
-  background: rgba(112, 100, 93, 0.6);
-  height: 50px;
-  margin-bottom: 2%;
-  margin-left: .3%;
+.ta-block-wrapper.products .ta-block-body{
+	margin-top: 15px;
 }
-.product-display-image {
-  background-color: rgba(112, 100, 93, 0.6);
-  height: 219px;
-  max-width: 100%;
+.product-display-image{
+	background: rgba(112, 100, 93, 0.6);
+	width: 100%;
 }
-.product-display-info {
-  background-color: rgba(112, 100, 93, 0.6);
-  margin-top: 1%;
-  min-height: 60px;
-  margin-bottom: 5%;
+.product-display-info{
+	background: rgba(112, 100, 93, 0.6);
+	margin: .3% 0 15px 0;
+	padding: 2.5px 10px;
+	width: 100%;
+}
+.product-display-info h6{
+	font-size: 15px;
+	font-weight: 300;
+}
+.products-padding{
+	padding: 0 7.5px !important;
+}
+
+/***************************/
+/* USER PRODUCT */
+/****************************/
+.single-product-image-wrapper, .single-product-name-wrapper, .single-product-detail-wrapper{
+	background: rgba(112, 100, 93, 0.6);
+
+}
+.product-padding{
+	padding: 0 .1%;
+}
+.single-product-name-wrapper{
+	margin-top: -2%;
+}
+.single-product-name-wrapper h2{
+	font-weight: 400;
+    font-size: 45px;
+    padding-left: 3%;
+}
+.ta-block-wrapper.product .ta-block-body{
+	background: rgba(112, 100, 93, 0.6);
+	padding: 5px 10px;
+}
+.single-product-description, .single-product-option-wrapper{
+	border-bottom: solid 1px #ccc;
+}
+.single-product-description p{
+	font-size: 16px;
+	padding: 10px 0;
+}
+.single-product-option-wrapper .price-display{
+	margin-right: 70%;
+}
+.single-product-option-info{
+	margin-top: 5%;
+}
+#singleProductQuantityInput{
+	background: rgba(112, 100, 93, 0.1);
+	border-radius: 0;
+	color: #fff;
+}
+.single-product-add-to-cart-wrapper{
+	margin-top: 1%;
+}
+.single-product-add-to-cart-wrapper button{
+	margin-top: 6%;
+    background: rgba(112, 100, 93, 1);
+    color: #fff;
+    font-size: 18px;
+}
+.single-product-add-to-cart-wrapper button:hover{
+	margin-top: 6%;
+    background: #fff;
+    color: rgba(112, 100, 93, 1);
+    font-size: 18px;
+}
+
+/********************************/
+/* USER CART */
+/********************************/
+.ta-block-wrapper.cart .ta-block-body{
+	background: rgba(112, 100, 93, .6);
+	padding: 10px 0 2% 0;
+}
+.ta-block-wrapper.cart table tbody td p.price-display{
+	margin-right: 65%;
+}
+.checkout-info-total{
+	border-top: solid 1px #ccc;
+}
+.checkout-ind-total{
+	border-bottom: solid 1px #ccc;
+	padding: 5px;
+}
+.checkout-ind-total h6{
+	font-size: 15px;
+}
+.checkout-total-button{
+	padding: 0 10px;
+}
+.checkout-total-button button{
+	margin-top: 6%;
+    background: rgba(112, 100, 93, 1);
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 0;
+    border: solid 1px #ccc;
 }
 
 
 
+/***************************/
+/* ORDERS */
+/***************************/
+.ta-block-wrapper.orders .ta-block-body{
+	background: rgba(112, 100, 93, .6);
+	padding: 10px 0;
+}
+.ta-block-wrapper.orders .ta-block-body table tbody td{
+	font-size: 14px;
+}
+.ta-block-wrapper.orders .ta-block-body table tbody td p.price-display{
+	margin-right: 75%;
+}
+
+
+/***************************/
+/* ORDER */
+/***************************/
+.ta-block-wrapper.order .ta-block-body{
+	background: rgba(112, 100, 93, .6);
+	padding: 10px 0;
+}
+.ta-block-wrapper.order .ta-block-body table tbody td{
+	font-size: 14px;
+}
+.ta-block-wrapper.order .ta-block-body table tbody td p.price-display{
+	margin-right: 50%;
+}
+.ta-block-wrapper.comments .ta-block-body{
+	background: rgba(112, 100, 93, .6);
+	padding: 10px;
+}
+
+/*********************************/
+/* FLASH MESSAGING */
+/*********************************/
+.flash_message-warning{
+	background: #FA6464;
+	padding: 5px;
+}
+.flash_message-success{
+	background: #B5F777;
+	padding: 10px;
+}
+.flash_queue dl dd{
+	color: #fff;
+	font-size: 16px;
+}
 
 
 

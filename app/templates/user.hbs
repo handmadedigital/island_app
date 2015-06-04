@@ -17,14 +17,17 @@
         <li><a href="#"><img src="/assets/images/container-icon.png"></a></li>
         <li><a href="#"><img src="/assets/images/feedback-icon.png"></a></li>
         <li><a href="#"><img src="/assets/images/message-icon.png"></a></li>
-        <li class="welcome-header-message"><a href="#">Welcome back Rodrigo Lessa</a></li>
+        <li class="welcome-header-message"><a href="#">Welcome back {{session.currentUser.username}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
+            <li>{{#if session.isAuthenticated}}
+            <a {{ action 'invalidateSession' }}>Logout</a>
+          {{else}}
+            {{#link-to 'login'}}Login{{/link-to}}
+          {{/if}}</li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
@@ -41,14 +44,15 @@
 			<li>{{#link-to 'user.dashboard'}}Dashboard{{/link-to}}</li>
 			<li>{{#link-to 'user.products'}}Products{{/link-to}}</li>
 			<li>{{#link-to 'user.dashboard'}}Categories{{/link-to}}</li>
-			<li>{{#link-to 'user.dashboard'}}Orders{{/link-to}}</li>
-			<li>{{#link-to 'user.dashboard'}}Container{{/link-to}}</li>
+			<li>{{#link-to 'user.orders'}}Orders{{/link-to}}</li>
+			<li>{{#link-to 'user.cart'}}Cart{{/link-to}}</li>
 			<li>{{#link-to 'user.dashboard'}}Feedback{{/link-to}}</li>
 		</ul>
 	</div> <!-- END SIDE BAR -->
 
 	<div id="pageContentWrapper">
-		{{outlet}}
+    {{message-queue}}
+		{{liquid-outlet}}
 	</div><!-- END PAGE CONTENT -->
 
 </div>

@@ -1,0 +1,81 @@
+<div id="cartWrapper">
+	<div class="row">
+		<div class="col-sm-12">
+			<div id="checkoutWrapper">
+				<div class="ta-block-wrapper cart">
+					<div class="ta-block-title">
+						<h5>Cart</h5>
+					</div>
+					<div class="ta-block-body">
+						<table class="table table-ta">
+							<thead>
+								<tr>
+									<th>Image</th>
+									<th>Product</th>
+									<th>Quantity</th>
+									<th>Price</th>
+									<th>Total Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#each cart in model}}
+								<tr>
+									<td><img src="{{cart.product_image}}" width="15%;"></td>
+									<td>{{upper-case cart.product_name}}</td>
+									<td>{{cart.quantity}}</td>
+									<td><p class="price-display">${{cart.price}}</p></td>
+									<td><p class="price-display">${{cart.total_price}}.00</p></td>
+								</tr>
+								{{/each}}
+							</tbody>
+						</table>
+						<div class="checkout-info-total">
+							<div class="row">
+								<div class="col-md-4 col-md-offset-8">
+									<div class="checkout-ind-total">
+										<h6>Conatainer Total</h6>
+									</div>
+									<div class="checkout-ind-total">
+										<div class="row">
+											<div class="col-md-6 ">
+												<h6>Conatainer Subtotal</h6>
+											</div>
+											<div class="col-md-6 ">
+												<h6>${{orderTotal}}.00</h6>
+											</div>
+										</div>
+									</div>
+									<div class="checkout-ind-total">
+										<div class="row">
+											<div class="col-md-6 ">
+												<h6>Freight</h6>
+											</div>
+											<div class="col-md-6 ">
+												<h6>$0.00</h6>
+											</div>
+										</div>
+									</div>
+									<div class="checkout-ind-total">
+										<div class="row">
+											<div class="col-md-6 ">
+												<h6>Conatainer Total</h6>
+											</div>
+											<div class="col-md-6 ">
+												<h6>${{orderTotal}}.00</h6>
+											</div>
+										</div>
+									</div>
+									<div class="checkout-total-button">
+										<form {{action 'placeOrder' on="submit"}}>
+											<button class="btn btn-primary place-order-btn">Place Order</button>
+										</form>	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

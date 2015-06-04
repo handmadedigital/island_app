@@ -1,33 +1,35 @@
 <div id="productsPageWrapper">
 	<div class="row">
 		<div class="col-sm-12">
-			<div id="productsBar">
-				<h6>Island Buyers Club</h6>
-			</div>
-			<div id="productsDisplay">
-				{{#each model as |product|}}
-					{{#link-to 'user.product' product.slug}}
-						<div class="col-md-3">
-							<div class="product-display-wrapper">
-								<div class="product-display-image">
-									<img src="{{product.image_src}}">
+			<div class="ta-block-wrapper products">
+				<div class="ta-block-title">
+					<h5>Products</h5>
+				</div>
+				<div class="ta-block-body">
+					<div class="row">
+						{{#each model as |product|}}
+							{{#link-to 'user.product' product.slug}}
+								<div class="col-md-3 products-padding">
+									<div class="product-display-wrapper">
+										<div class="product-display-image center">
+											<img src="{{product.image_src}}">
+										</div>
+										<div class="product-display-info">
+			                                <div class="row">
+			                                    <div class="col-sm-12">
+			                                        <h6 class="left">{{upper-case product.name}}</h6>
+			                                     	{{#each product.categories as |category|}}
+			                                        	<h6 class="right product-categories">{{category.name}}</h6>
+			                                    	{{/each}}
+			                                    </div>
+			                                </div>    
+			                            </div>					
+									</div>
 								</div>
-								<div class="product-display-info">
-	                                <div class="row">
-	                                    <div class="col-sm-8">
-	                                        <h6>{{upper-case product.name}}</h6>
-	                                    </div>
-	                                    <div class="col-sm-4">
-	                                     	{{#each product.categories as |category|}}
-	                                        	<h6 class="product-display-categories">{{category.name}}</h6>
-	                                    	{{/each}}
-	                                    </div>
-	                                </div>    
-	                            </div>					
-							</div>
-						</div>
-					{{/link-to}}
-				{{/each}}
+							{{/link-to}}
+						{{/each}}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

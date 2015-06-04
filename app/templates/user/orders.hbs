@@ -1,0 +1,35 @@
+<div id="ordersWrapper">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="ta-block-wrapper orders">
+				<div class="ta-block-title">
+					<h5>Orders</h5>
+				</div>
+				<div class="ta-block-body">
+					<table class="table table-ta table-ta-hover">
+						<thead>
+							<tr>
+								<th>Order Number</th>
+								<th>Date</th>
+								<th>Weight</th>
+								<th>Cubic Feet</th>
+								<th>Order Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each model as |order|}}
+								<tr>
+									<td>{{#link-to 'user.order' order.order_number}}{{order.order_number}}{{/link-to}}</td>
+									<td>{{order.order_number}}</td>
+									<td>{{order.weight}}lbs</td>
+									<td>{{order.cubic_feet}}'</td>
+									<td><p class="price-display">${{order.total_price}}.00</p></td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
