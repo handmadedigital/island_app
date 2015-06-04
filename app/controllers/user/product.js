@@ -10,18 +10,18 @@ export default Ember.Controller.extend({
 		});
 	},
 
-    selectedProduct: null,
+    variant_id: null,
 
     actions:{
     	radioChecked: function(value){
-			this.set('selectedProduct', value);
+			this.set('variant_id', value);
 		},
 		submit: function(){
 			var self = this;
-			var data = self.getProperties('quantity', 'selectedProduct');
-			console.log(data.selectedProduct);
+			var data = self.getProperties('quantity', 'variant_id');
+			console.log(data);
 
-			if(data.selectedProduct == null){
+			if(data.variant_id == null){
 				this.flashMessage({
 				  	content: 'Please select a product!', // String
 				  	duration: 3000, // Number in milliseconds
@@ -32,18 +32,15 @@ export default Ember.Controller.extend({
 			}
 			else
 			{
-				var cart = self.store.createRecord('cart', {
-					quantity: data.quantity,
-					variant_id: data.selectedProduct
+				$.post('https://island-api.herokuapp.com/api/v1/carts', data).then(function(response){
+					
 				});
 
-				cart.save();
-
 				this.flashMessage({
-				  content: 'Product was added to the cart!', // String
-				  duration: 9000, // Number in milliseconds
-				  type: 'success', // String
-				});	
+					content: 'Product was added to the cart!', // String
+					duration: 2000, // Number in milliseconds
+					type: 'success', // String
+				});
 
 				self.clearProperties();
 			}

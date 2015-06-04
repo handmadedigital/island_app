@@ -27,9 +27,6 @@ export default Ember.Controller.extend({
 		},
 		addOptionValue: function(){
 			var data = this.getProperties('option', 'option_value', 'option_width', 'option_height');
-
-			this.store.push('product')
-			
 		}
 	}
 });
