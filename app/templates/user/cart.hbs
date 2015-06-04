@@ -24,7 +24,7 @@
 									<td>{{upper-case cart.product_name}}</td>
 									<td>{{cart.quantity}}</td>
 									<td><p class="price-display">${{cart.price}}</p></td>
-									<td><p class="price-display">${{cart.total_price}}.00</p></td>
+									<td><p class="price-display">${{cart.total_price}}</p></td>
 								</tr>
 								{{/each}}
 							</tbody>
@@ -41,7 +41,7 @@
 												<h6>Conatainer Subtotal</h6>
 											</div>
 											<div class="col-md-6 ">
-												<h6>${{orderTotal}}.00</h6>
+												<h6>${{total_price}}</h6>
 											</div>
 										</div>
 									</div>
@@ -61,7 +61,7 @@
 												<h6>Conatainer Total</h6>
 											</div>
 											<div class="col-md-6 ">
-												<h6>${{orderTotal}}.00</h6>
+												<h6>${{total_price}}</h6>
 											</div>
 										</div>
 									</div>
