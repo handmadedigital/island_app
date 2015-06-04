@@ -88,7 +88,7 @@ nav.navbar {
 /*USER */
 /*******************************/
 #userWrapper{
-	margin-top: .1%;
+	margin-top: .2%;
 }
 #sidebarWrapper{
 	z-index: 1000;
@@ -297,6 +297,35 @@ nav.navbar {
 	padding: 10px;
 }
 
+
+
+
+
+
+
+
+
+
+
+/**************************************/
+/* ADMIN */
+/**************************************/
+#adminWrapper{
+	margin-top: .2%;
+}
+
+
+
+/**********************************/
+/* ADMIN ADD PRODUCT */
+/*********************************/
+.ta-block-wrapper.add-product .ta-block-body{
+	background: rgba(112, 100, 93, .6);
+	padding: 10px;
+}
+
+
+
 /*********************************/
 /* FLASH MESSAGING */
 /*********************************/
@@ -345,6 +374,9 @@ nav.navbar {
 }
 @media (min-width: 801px){
 	#userWrapper{
+		padding-left: 250px;
+	}
+	#adminWrapper{
 		padding-left: 250px;
 	}
 	#sidebarWrapper{

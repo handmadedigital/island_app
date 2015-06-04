@@ -1,0 +1,126 @@
+<div class="ta-block-wrapper add-product">
+	<div class="ta-block-title">
+		<h5>Add Product</h5>
+	</div>
+	<div class="ta-block-body">
+		<div class="add-product-form-wrapper">
+			<form>
+				<div class="form-group">
+				    <label for="productImageInputFile">Product Image</label>
+				    {{input type="file" id="productImageInputFile" value=image_src}}
+				    <p class="help-block">Please select an image</p>
+				</div>
+				<div class="form-group">
+				    <label for="productNameInput">Product Name</label>
+				    {{input value=product_name class="form-control" id="productNameInput"}}
+				</div>
+				<div class="form-group">
+				    <label for="productDescriptionTextarea">Description</label>
+				    {{textarea value=name class="form-control" id="productDescriptionTextarea"}}
+				</div>
+				<div class="determine-if-variation-wrapper">
+					<p>Does this product have variations?</p>
+					<button {{action 'displayAddVariation'}}>Yes</button>
+					<button {{action 'displayAddProduct'}}>No</button>
+				</div>
+				{{#liquid-if displayAddProduct}}
+					<div class="row">
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Width</label>
+									{{input type="number" value=width class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Length</label>
+									{{input type="number" value=length class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Height</label>
+									{{input type="number" value=height class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Cubic Feet</label>
+									{{input type="number" value=cubic_feet class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Weight</label>
+									{{input type="number" value=weight class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Price</label>
+									{{input type="number" value=price class="form-control"}}
+								</div>
+							</div>
+						</div>
+				{{/liquid-if}}
+
+				{{#liquid-if displayAddVariation}}
+					<div class="form-group">
+						<label>What is the variation (example = size)</label>
+						{{input value=option class="form-control"}}
+					</div>
+					<div class="add-product-option-value-wrapper">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Variant Option (example = 13ft)</label>
+									{{input value=option_value class="form-control"}}
+								</div>
+							</div>
+						</div>	
+						<div class="row">
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Width</label>
+									{{input type="number" value=option_width class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Length</label>
+									{{input type="number" value=option_length class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Height</label>
+									{{input type="number" value=option_height class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Cubic Feet</label>
+									{{input type="number" value=option_cubic_feet class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Weight</label>
+									{{input type="number" value=option_weight class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Price</label>
+									{{input type="number" value=option_price class="form-control"}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<button {{action 'addOptionValue'}}>test</button>
+				{{/liquid-if}}
+			  	<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

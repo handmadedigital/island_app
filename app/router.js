@@ -16,6 +16,11 @@ Router.map(function() {
       this.route('orders');
       this.route('order', {path: '/order/:order_number'})
   });
+  
+  this.route('admin', function() {
+    this.route('login');
+    this.route('add-product');
+  });
 });
 
 export default Router;

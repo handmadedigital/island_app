@@ -1,0 +1,17 @@
+{
+  "development": {
+    "store": {
+      "type": "S3",
+      "accessKeyId": "AKIAI2SJAGN4PXAX3J5A",
+      "secretAccessKey": "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",
+      "bucket": "threeindex"
+    },
+
+    "assets": {
+      "type": "s3",
+      "accessKeyId": "AKIAI2SJAGN4PXAX3J5A",
+      "secretAccessKey": "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",
+      "bucket": "threeaccents"
+    }
+  }
+}
