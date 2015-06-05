@@ -11,6 +11,14 @@ body{
 	padding-top: 60px;
 	background-attachment: fixed;
 }
+input, textarea{
+	background-color: rgba(112, 100, 93, 0.6) !important;
+	color: #fff !important;
+}
+button{
+	background-color: rgba(112, 100, 93, 1);
+	color: #fff;
+}
 .center{text-align: center;}
 .right{float: right}
 .left{float: left;}
@@ -261,7 +269,11 @@ nav.navbar {
     border-radius: 0;
     border: solid 1px #ccc;
 }
-
+.ta-block-wrapper.shipping-container .ta-block-body{
+	background: rgba(112, 100, 93, .6);
+	margin-top: .23%;
+	padding: 10px;
+}
 
 
 /***************************/

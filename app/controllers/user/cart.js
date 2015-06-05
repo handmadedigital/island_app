@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	variant_ids: Ember.computed.mapBy('model', 'variant_id'),
-	quantities: Ember.computed.mapBy('model', 'quantity'),
-	totalPrices: Ember.computed.mapBy('model', 'total_price'),
+	variant_ids: Ember.computed.mapBy('model.cart', 'variant_id'),
+	quantities: Ember.computed.mapBy('model.cart', 'quantity'),
+	totalPrices: Ember.computed.mapBy('model.cart', 'total_price'),
     total_price: Ember.computed.sum('totalPrices'),
-    allWeights: Ember.computed.mapBy('model', 'weight'),
+    allWeights: Ember.computed.mapBy('model.cart', 'weight'),
     weight: Ember.computed.sum('allWeights'),
-    allCubicFeet: Ember.computed.mapBy('model', 'cubic_feet'),
+    allCubicFeet: Ember.computed.mapBy('model.cart', 'cubic_feet'),
     cubic_feet: Ember.computed.sum('allCubicFeet'),
 
     actions: {

@@ -1,6 +1,6 @@
 <div id="cartWrapper">
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12 col-md-9">
 			<div id="checkoutWrapper">
 				<div class="ta-block-wrapper cart">
 					<div class="ta-block-title">
@@ -18,7 +18,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{{#each cart in model}}
+								{{#each cart in model.cart}}
 								<tr>
 									<td><img src="{{cart.product_image}}" width="15%;"></td>
 									<td>{{upper-case cart.product_name}}</td>
@@ -73,6 +73,30 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-3">
+				<div class="ta-block-wrapper shipping-container">
+					<div class="ta-block-title">
+						<h5>Shipping Options</h5>
+					</div>
+					<div class="ta-block-body">
+						{{#each container in model.shipping_container}}
+							<div class="cart-shipping-container-option">
+								<div class="row">
+									<div class="col-sm-5">
+										<img src="{{container.image_src}}">
+									</div>
+									<div class="col-sm-7">
+										<h5>{{container.name}}</h5>
+										<h6>{{capacity-left container.capacity cubic_feet}} left to fill</h6>
+									</div>
+								</div>
+							</div>
+						{{/each}}
 					</div>
 				</div>
 			</div>
