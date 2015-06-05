@@ -6,9 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('/');
+
   this.route('login');
 
-  this.resource('user', {path: ':username'}, function(){
+  this.resource('user', function(){
       this.route('dashboard');
       this.route('products', {path: '/products'});
       this.route('product', {path: '/product/:product_slug'});
