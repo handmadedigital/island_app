@@ -14,9 +14,10 @@ Router.map(function() {
       this.route('product', {path: '/product/:product_slug'});
       this.route('cart');
       this.route('orders');
-      this.route('order', {path: '/order/:order_number'})
+      this.route('order', {path: '/order/:order_number'});
+      this.route('category', {path: ':category/products'});
   });
-  
+
   this.route('admin', function() {
     this.route('login');
     this.route('add-product');

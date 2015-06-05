@@ -8,7 +8,8 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
    	 values: {embedded: 'always'},
    	 options: {embedded: 'always'},
    	 product: {embedded: 'always'},
-   	 order_details: {embedded: 'always'}
+   	 order_details: {embedded: 'always'},
+   	 products: {embedded: 'always'}
     },
 
   	extractArray: function(store, typeClass, payload) {

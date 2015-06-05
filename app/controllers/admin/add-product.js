@@ -107,7 +107,7 @@ export default Ember.Controller.extend({
 					
 			});
 
-			this.clearProperties;
+			this.clearProperties();
 
 			this.flashMessage({
 				content: 'Product was added!', // String
@@ -125,7 +125,7 @@ export default Ember.Controller.extend({
 					
 			});
 
-			this.clearProperties;
+			this.clearProperties();
 
 			this.flashMessage({
 				content: 'Product was added!', // String

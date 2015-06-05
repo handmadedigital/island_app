@@ -11,7 +11,24 @@
 	<div class="user-page-content dashboard">
 		<div class="row">
 			<div class="col-md-8 col-sm-12">
-				{{#ta-block model=model.categories block-wrapper="categories" title="categories"}}{{/ta-block}}
+				<div class="ta-block-wrapper categories">
+				    <div class="ta-block-title">
+				        <h5>Categories</h5>
+				    </div>
+				    <div class="ta-block-body">
+				        <div class="row">
+				            {{#each m in model.categories}}
+				                {{#link-to 'user.category' m.slug}}
+				                    <div class="col-md-3 col-sm-6">
+				                        <div class="ta-ind-block-wrapper center">
+				                            <img src="{{m.image_src}}">
+				                        </div>
+				                    </div>
+				                {{/link-to}}
+				            {{/each}}
+				        </div>
+				    </div>
+				</div>
 				{{#ta-block model=model.newest_products block-wrapper="newest-products" title="newest products"}}{{/ta-block}}
 			</div>
 			<div class="col-md-4 col-sm-12">
