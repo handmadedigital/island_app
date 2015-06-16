@@ -2,5 +2,5 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
 	namespace: 'api/v1',
-	host: 'https://island-api.herokuapp.com'
+	host: 'http://localhost:8000'
 });

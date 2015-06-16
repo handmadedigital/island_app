@@ -42,12 +42,18 @@
 
 	<div id="sidebarWrapper">
 		<ul class="list-sidebar-menu">
-			<li>{{#link-to 'user.dashboard'}}Dashboard{{/link-to}}</li>
-			<li>{{#link-to 'user.products'}}Products{{/link-to}}</li>
-			<li>{{#link-to 'user.dashboard'}}Categories{{/link-to}}</li>
-			<li>{{#link-to 'user.orders'}}Orders{{/link-to}}</li>
-			<li>{{#link-to 'user.cart'}}Cart{{/link-to}}</li>
-			<li>{{#link-to 'user.dashboard'}}Feedback{{/link-to}}</li>
+      {{#if session.currentUser.is_admin}}
+        <li>{{#link-to 'admin'}}Dashboard{{/link-to}}</li>
+        <li>{{#link-to 'admin.add-product'}}Add Product{{/link-to}}</li>
+        <li>{{#link-to 'admin.edit-product'}}Edit Product{{/link-to}}</li>
+      {{else}}
+  			<li>{{#link-to 'user.dashboard'}}Dashboard{{/link-to}}</li>
+  			<li>{{#link-to 'user.products'}}Products{{/link-to}}</li>
+  			<li>{{#link-to 'user.dashboard'}}Categories{{/link-to}}</li>
+  			<li>{{#link-to 'user.orders'}}Orders{{/link-to}}</li>
+  			<li>{{#link-to 'user.cart'}}Cart{{/link-to}}</li>
+  			<li>{{#link-to 'user.dashboard'}}Feedback{{/link-to}}</li>
+      {{/if}}  
 		</ul>
 	</div> <!-- END SIDE BAR -->
 

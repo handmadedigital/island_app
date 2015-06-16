@@ -103,8 +103,8 @@ export default Ember.Controller.extend({
 				price: data.optionPrice
 			};
 
-			$.post('https://island-api.herokuapp.com/api/v1/products', product).then(function(response){
-					
+			$.post('http://localhost:8000/api/v1/products', product).then(function(response){
+				console.log(response);	
 			});
 
 			this.clearProperties();
@@ -121,7 +121,7 @@ export default Ember.Controller.extend({
 
 			var data = this.getProperties('image_src', 'name', 'description',  'length', 'width', 'height', 'cubic_feet', 'weight', 'price');
 
-			$.post('https://island-api.herokuapp.com/api/v1/products', data).then(function(response){
+			$.post('http://localhost:8000/api/v1/products', data).then(function(response){
 					
 			});
 

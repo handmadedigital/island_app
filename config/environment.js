@@ -20,23 +20,26 @@ module.exports = function(environment) {
 
  ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:token',
-    crossOriginWhitelist: ['https://island-api.herokuapp.com/'],
+    crossOriginWhitelist: ['http://localhost:8000'],
     routeAfterAuthentication: 'user.dashboard'
   };
 
   ENV['simple-auth-token'] = {
     refreshAccessTokens: true,
-    timeFactor: 1,
-    refreshLeeway: 300, // Refresh the token 5 minutes (300s) before it expires.
-    serverTokenEndpoint: 'https://island-api.herokuapp.com/api/v1/auth/login',
-    serverTokenRefreshEndpoint: 'https://island-api.herokuapp.com/api/v1/auth/refresh',
-    identificationField: 'username',
-    passwordField: 'password',
-    tokenPropertyName: 'token',
-    authorizationPrefix: 'Bearer ',
-    authorizationHeaderName: 'Authorization',
-    headers: {},
+    timeFactor: 1000,
+    refreshLeeway: 30, // Refresh the token 5 minutes (300s) before it expires.
+    serverTokenEndpoint: 'http://localhost:8000/api/v1/auth/login',
+    serverTokenRefreshEndpoint: 'http://localhost:8000/api/v1/auth/refresh',
   };
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'font-src': "'self' http://fonts.gstatic.com",
+    'connect-src': "'self'",
+    'img-src': "'self'",
+    'media-src': "'self'"
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

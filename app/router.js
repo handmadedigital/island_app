@@ -23,6 +23,8 @@ Router.map(function() {
   this.route('admin', function() {
     this.route('login');
     this.route('add-product');
+    this.route('edit-product');
+    this.route('edit', {path: 'edit/:product_slug'});
   });
 });
 
