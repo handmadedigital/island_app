@@ -6,9 +6,7 @@
 		<div class="add-product-form-wrapper">
 			<form>
 				<div class="form-group">
-				    <label for="productImageInputFile">Product Image</label>
-				    {{file-upload url="/upload"}}
-				    <p class="help-block">Please select an image</p>
+				    <button class="btn btn-success" {{action 'showModal' 'find-image-modal' model}}>Find Image</button>
 				</div>
 				<div class="form-group">
 				    <label for="productNameInput">Product Name</label>

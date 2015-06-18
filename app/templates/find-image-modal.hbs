@@ -1,0 +1,9 @@
+{{#my-modal title='Add Credential'  ok='addImage' close='removeModal'}}
+  <div class="row">
+    {{#each model as |image|}}
+      <div class="col-md-2">
+        <img class="add-image-img" src="{{image.image_src}}">
+      </div>
+    {{/each}}
+  </div>
+{{/my-modal}}

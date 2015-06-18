@@ -338,6 +338,10 @@ nav.navbar {
 	background: rgba(112, 100, 93, .6);
 	padding: 10px;
 }
+.add-image-img{
+	width: 100%;
+	cursor: pointer;
+}
 
 
 
