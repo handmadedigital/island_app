@@ -59,6 +59,13 @@
 									{{input type="number" value=price class="form-control"}}
 								</div>
 							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+								    <label for="">Part Number</label>
+								    {{input value=part_number class="form-control" id=""}}
+								</div>
+							</div>
+							<br/>
 							<button {{action 'addProduct'}}>Add Product</button>
 						</div>
 				{{/liquid-if}}
@@ -74,6 +81,12 @@
 								<div class="form-group">
 									<label>Variant Option (example = 13ft)</label>
 									{{input value=option_value class="form-control"}}
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+								    <label for="">Part Number</label>
+								    {{input value=option_part_number class="form-control" id=""}}
 								</div>
 							</div>
 						</div>	

@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
 	optionCubicFeet: Ember.A([]),
 	optionWeight: Ember.A([]),
 	optionPrice: Ember.A([]),
+	optionPartNumber: Ember.A([]),
 
 	clearOptionProperties: function(){
 		this.setProperties({
@@ -67,7 +68,7 @@ export default Ember.Controller.extend({
 			}
 		},
 		addOptionValue: function(){
-			var data = this.getProperties('option', 'option_value', 'option_width', 'option_length', 'option_height', 'option_cubic_feet', 'option_weight', 'option_price');
+			var data = this.getProperties('option', 'option_value', 'option_width', 'option_length', 'option_height', 'option_cubic_feet', 'option_part_number', 'option_weight', 'option_price');
 
 			this.optionValue.pushObject(data.option_value);
 			this.optionWidth.pushObject(data.option_width);
@@ -76,6 +77,7 @@ export default Ember.Controller.extend({
 			this.optionCubicFeet.pushObject(data.option_cubic_feet);
 			this.optionWeight.pushObject(data.option_weight);
 			this.optionPrice.pushObject(data.option_price);
+			this.optionPartNumber.pushObject(data.option_part_number);
 
 			this.clearOptionProperties();
 
@@ -119,7 +121,7 @@ export default Ember.Controller.extend({
 		},
 		addProduct: function(){
 
-			var data = this.getProperties('image_src', 'name', 'description',  'length', 'width', 'height', 'cubic_feet', 'weight', 'price');
+			var data = this.getProperties('image_src', 'name', 'description',  'length', 'width', 'height', 'cubic_feet', 'weight', 'price', 'part_number');
 
 			$.post('https://island-api.herokuapp.com/api/v1/products', data).then(function(response){
 					
