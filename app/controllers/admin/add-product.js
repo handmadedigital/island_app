@@ -89,7 +89,7 @@ export default Ember.Controller.extend({
 
 		},
 		addVariantProduct: function(){
-			var data = this.getProperties('image_src', 'name', 'description', 'option', 'optionValue', 'optionLength', 'optionWidth', 'optionHeight', 'optionCubicFeet', 'optionWeight', 'optionPrice');
+			var data = this.getProperties('image_src', 'name', 'description', 'option', 'optionValue', 'optionLength', 'optionWidth', 'optionHeight', 'optionCubicFeet', 'optionWeight', 'optionPrice', 'optionPartNumber');
 
 			var product =  {
 				name: data.name,
@@ -102,10 +102,11 @@ export default Ember.Controller.extend({
 				height: data.optionHeight,
 				cubic_feet: data.optionCubicFeet,
 				weight: data.optionWeight,
-				price: data.optionPrice
+				price: data.optionPrice,
+				part_number: data.optionPartNumber
 			};
 
-			$.post('https://island-api.herokuapp.com/api/v1/products', product).then(function(response){
+			$.post('http://localhost:8000/api/v1/products', product).then(function(response){
 				console.log(response);	
 			});
 

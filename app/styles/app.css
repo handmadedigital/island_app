@@ -5,7 +5,7 @@ h1,h2,h3,h4,h5,h6,p,span,label,a,li,dd,th,td{
 }
 ul{list-style-type: none;}
 body{
-	background: url(/assets/images/main-bk.jpg);
+	background: #333;
 	background-size: cover;
 	background-position: 0 -300px;
 	padding-top: 60px;
