@@ -336,7 +336,7 @@ nav.navbar {
 .login-wrapper{
 	background: rgba(0,0,0,.3);
 	padding: 20px;
-	margin-top: 40%;
+	margin-top: 35%;
 }
 
 .list-logos{
@@ -346,9 +346,8 @@ nav.navbar {
 
 .list-logos li{
 	display: inline-block;
-	width: 30%;
-	padding: 10px;
-	margin: 20px;
+	width: 33%;
+	padding: 80px;
 }
 
 .list-logos li img{
