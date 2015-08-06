@@ -321,6 +321,39 @@ nav.navbar {
 	padding: 10px;
 }
 
+/*********************************/
+/* LOGIN */
+/*******************************/
+#loginWrapper{
+	background: url(/assets/images/login-bk.jpg);
+	margin-top: -60px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.login-wrapper{
+	background: rgba(0,0,0,.3);
+	padding: 20px;
+	margin-top: 40%;
+}
+
+.list-logos{
+	list-style-type: none;
+	width: 100%;
+}
+
+.list-logos li{
+	display: inline-block;
+	width: 30%;
+	padding: 10px;
+	margin: 20px;
+}
+
+.list-logos li img{
+	width: 70%;
+}
 
 
 
