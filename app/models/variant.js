@@ -7,5 +7,6 @@ export default DS.Model.extend({
   cubic_feet: DS.attr('string'),
   option_value: DS.attr('string'),
   container: DS.hasMany('container'),
-  product: DS.belongsTo('product')
+  product: DS.belongsTo('product'),
+  ibc_part_number: DS.attr('number')
 });

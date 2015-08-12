@@ -8,5 +8,6 @@ export default DS.Model.extend({
   price: DS.attr('string'),
   total_price: DS.attr('number'),
   weight: DS.attr('number'),
-  cubic_feet: DS.attr('number')
+  cubic_feet: DS.attr('number'),
+  ibc_part_number: DS.attr('string')
 });
